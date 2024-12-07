@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Search for Music</h1>
+<form method="get" action="/search">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" name="query" placeholder="Search by title, author, or lyrics">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+    </div>
+</form>
+<div class="row">
+    {% for song in songs %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="{{ song.image_path }}" class="card-img-top" alt="{{ song.title }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ song.title }}</h5>
+                <p class="card-text">by {{ song.author }}</p>
+                <a href="/song/{{ song.id }}" class="btn btn-primary">Listen</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+body {
+    background-color: #141625;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+}
+
+.card img {
+    border-radius: 5px;
+}
+
+.audio-controls {
+    background-color: #1f1f2e;
+    padding: 20px;
+    border-radius: 10px;
+}
